@@ -2,8 +2,10 @@
 
 this API provides information about study room reservations from [www.ub.tum.de/arbeitsplatz-reservieren](https://www.ub.tum.de/arbeitsplatz-reservieren)
 
+A live demo: [https://tumbibapi.joschas.page/forBib?bib=MI](https://tumbibapi.joschas.page/forBib?bib=MI)
+
 ## Endpoints 
-`:8080/forBib?bib={MI|SG|WS|CH|PH...}`
+`/forBib?bib={MI|SG|WS|CH|PH...}`
 
 ```
 [
