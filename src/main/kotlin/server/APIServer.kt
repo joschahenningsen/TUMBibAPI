@@ -12,7 +12,7 @@ class APIServer {
 
     init {
         TUMAPIFetcher().start()
-        server.createContext("/freeForBib", FreeForBib())
+        server.createContext("/forBib", FreeForBib())
         server.executor = Executors.newFixedThreadPool(10)
         server.start()
     }

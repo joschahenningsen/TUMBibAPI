@@ -3,7 +3,7 @@
 this API provides information about study room reservations from [www.ub.tum.de/arbeitsplatz-reservieren](https://www.ub.tum.de/arbeitsplatz-reservieren)
 
 ## Endpoints 
-`:8080/freeForBib?bib={MI|SG|WS|CH|PH...}`
+`:8080/forBib?bib={MI|SG|WS|CH|PH...}`
 
 ```
 [
