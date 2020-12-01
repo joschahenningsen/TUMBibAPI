@@ -2,7 +2,9 @@ package server
 
 import com.sun.net.httpserver.HttpServer
 import model.Appointment
-import server.handlers.FreeForBib
+import server.handlers.All
+import server.handlers.ForBib
+import server.handlers.ForDay
 import java.net.InetSocketAddress
 import java.util.*
 import java.util.concurrent.Executors
@@ -12,7 +14,8 @@ class APIServer {
 
     init {
         TUMAPIFetcher().start()
-        server.createContext("/forBib", FreeForBib())
+        server.createContext("/forBib", ForBib())
+        server.createContext("/all", All())
         server.executor = Executors.newFixedThreadPool(10)
         server.start()
     }

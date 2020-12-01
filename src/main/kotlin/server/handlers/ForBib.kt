@@ -8,7 +8,7 @@ import model.Bib
 import server.APIServer
 import server.Helpers
 
-class FreeForBib : Handler() {
+class ForBib : Handler() {
     override fun handle(exchange: HttpExchange?) {
         val params: Map<String?, String?> = queryToMap(exchange!!.requestURI.query)
         val bib: Bib = Helpers.parseBib(params["bib"])
@@ -20,9 +20,4 @@ class FreeForBib : Handler() {
             send(200, response, exchange)
         }
     }
-
-    companion object {
-        val g: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
-    }
-
 }
