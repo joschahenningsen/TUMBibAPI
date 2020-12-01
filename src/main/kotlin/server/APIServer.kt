@@ -4,7 +4,6 @@ import com.sun.net.httpserver.HttpServer
 import model.Appointment
 import server.handlers.All
 import server.handlers.ForBib
-import server.handlers.ForDay
 import java.net.InetSocketAddress
 import java.util.*
 import java.util.concurrent.Executors
