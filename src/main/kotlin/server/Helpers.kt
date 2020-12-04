@@ -33,7 +33,7 @@ class Helpers {
                 "PH" -> Bib.Physik
                 "Physik" -> Bib.Physik
                 "SP" -> Bib.Sport
-                "Sport & Gesundheitswissenschaften" -> Bib.Sport
+                "Sport- & Gesundheitswissenschaften" -> Bib.Sport
                 "SG" -> Bib.Stammgelaende
                 "Stammgelände" -> Bib.Stammgelaende
                 "ST" -> Bib.Straubing

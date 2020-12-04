@@ -17,6 +17,7 @@ dependencies {
     testImplementation(kotlin("test-junit"))
     implementation("com.google.code.gson:gson:2.7")
     implementation("org.jsoup:jsoup:1.13.1")
+    implementation("joda-time:joda-time:2.10.8")
 }
 
 val fatJar = task("fatJar", type = Jar::class) {

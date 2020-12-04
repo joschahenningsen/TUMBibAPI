@@ -1,8 +1,14 @@
 package server
 
 import model.Appointment
+import org.joda.time.DateTime
+import org.joda.time.LocalDate
+import org.joda.time.LocalDateTime
+import org.joda.time.format.DateTimeFormat
 import org.jsoup.Jsoup
+import server.handlers.Handler
 import java.lang.NullPointerException
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class TUMAPIFetcher : Thread() {
@@ -31,13 +37,15 @@ class TUMAPIFetcher : Thread() {
                             val bib = Helpers.parseBib(tableRow.child(0).text())
                             val date = tableRow.child(1).text()
                             val times = tableRow.child(2).text().split(" – ")
+                            val from = LocalDateTime.parse("$date ${times[0]}", dtf)
+                            val til = LocalDateTime.parse("$date ${times[1]}", dtf)
                             val reservationId =
                                     if (tableRow.child(3).text() == "ausgebucht") {
                                         "-1"
                                     } else {
                                         tableRow.child(3).getElementsByTag("a").attr("href").replace("/reserve/", "")
                                     }
-                            appointments.add(Appointment(bib, "$date ${times[0]}", "$date ${times[1]}", reservationId))
+                            appointments.add(Appointment(bib, Handler.fmt.print(from), Handler.fmt.print(til), reservationId))
                         }
             } catch (e: Exception) {
                 //page i-1 was the last page.
@@ -49,10 +57,13 @@ class TUMAPIFetcher : Thread() {
                     println("fetched ${appointments.size} entries")
                     break
                 }else {
-                    // some problem (e.g. no network or server down, try again in 5 minutes)
+                    e.printStackTrace()
                     break
                 }
             }
         }
+    }
+    companion object {
+        val dtf = DateTimeFormat.forPattern("EEEE, d. MMMM yyyy H:mm").withLocale(Locale.GERMAN)
     }
 }

@@ -4,6 +4,8 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpHandler
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 import java.nio.charset.StandardCharsets
 
 abstract class Handler: HttpHandler {
@@ -16,6 +18,7 @@ abstract class Handler: HttpHandler {
         os.close()
     }
     companion object {
+        val fmt: DateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
         val g: Gson = GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create()
     }
 }
