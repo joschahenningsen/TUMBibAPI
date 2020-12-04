@@ -11,16 +11,35 @@ A live demo: [https://tumbibapi.joschas.page/forBib?bib=MI](https://tumbibapi.jo
 [
   {
     "bib": "Mathematik & Informatik",
-    "from": "Freitag, 27. November 2020:8:00",
-    "til": "Freitag, 27. November 2020:15:45",
+    "from": "2020-12-05T10:00:00.000",
+    "til": "2020-12-05T14:45:00.000",
     "reservationId": "-1"
   },
   {
     "bib": "Mathematik & Informatik",
-    "from": "Freitag, 27. November 2020:16:00",
-    "til": "Freitag, 27. November 2020:23:45",
+    "from": "2020-12-06T10:00:00.000",
+    "til": "2020-12-06T14:45:00.000",
     "reservationId": "1135096596"
   },
   ...
 ]
+```
+
+`/all`
+
+```
+[
+  {
+    "bib": "Stammgelände",
+    "from": "2020-12-05T10:00:00.000",
+    "til": "2020-12-05T14:45:00.000",
+    "reservationId": "748186522"
+  },
+  {
+    "bib": "Stammgelände",
+    "from": "2020-12-05T15:00:00.000",
+    "til": "2020-12-05T19:45:00.000",
+    "reservationId": "-1"
+  },
+  ...
 ```
