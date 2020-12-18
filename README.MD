@@ -1,6 +1,6 @@
 # TUMBibAPI
 
-**This project is discontinued, because a: For now TUM doesn't allow library reservations for now due to corona and b: This will be integrated into the TUM Campus App backend as soon as the service is back. :sparkles:**
+**This project is discontinued, because a: TUM doesn't allow library reservations for now due to corona and b: This will be integrated into the TUM Campus App backend as soon as the service is back. :sparkles:**
 
 this API provides information about study room reservations from [www.ub.tum.de/arbeitsplatz-reservieren](https://www.ub.tum.de/arbeitsplatz-reservieren)
 
